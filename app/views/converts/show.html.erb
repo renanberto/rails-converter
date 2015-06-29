@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @convert.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @convert.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @convert.picture %>
+</p>
+
+<%= link_to 'Edit', edit_convert_path(@convert) %> |
+<%= link_to 'Back', converts_path %>

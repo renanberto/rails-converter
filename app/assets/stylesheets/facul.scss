@@ -1,0 +1,21 @@
+// Place all the styles related to the facul controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ body {
+   background: #F0FFF0;
+   font-family: Arial;
+ }
+
+ h1 {
+   color: #000000;
+}
+
+.table-style {
+  border-bottom: 2px solid;
+}
+
+.colum-style {
+  width: 500px;
+  text-align: left;
+}

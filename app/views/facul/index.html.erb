@@ -1,0 +1,65 @@
+<h1>
+  <center>
+    Conversão entre bases.
+  </center>
+</h1>
+
+<table class="table-style" align="center">
+  <tr>
+    <th class="colum-style">
+        <%= form_tag do %>
+        
+          <h3> Informe o texto a ser convertido: </h3>
+          <%= text_field_tag 'text', nil, maxlength: 16 %>
+
+          <h3> Os caracteres mencionados pertences a qual base? </h3>
+          <%= radio_button_tag(:base_insert, "Binary") %>
+          <span> Binario </span><br/>
+          <%= radio_button_tag(:base_insert, "Decimal") %>
+          <span> Decimal </span><br/>
+          <%= radio_button_tag(:base_insert, "Octal") %>
+          <span> Octal </span><br/>
+          <%= radio_button_tag(:base_insert, "Hexadecimal") %>
+          <span> Hexadecimal </span><br/>
+          <%= radio_button_tag(:base_insert, "Texto") %>
+          <span> Texto </span><br/>
+
+          <h3>Para qual base gostaria de converter? </h3>
+          <%= radio_button_tag(:base_view, "Binary") %>
+          <span> Binario </span><br/>
+          <%= radio_button_tag(:base_view, "Decimal") %>
+          <span> Decimal </span><br/>
+          <%= radio_button_tag(:base_view, "Octal") %>
+          <span> Octal </span><br/>
+          <%= radio_button_tag(:base_view, "Hexadecimal") %>
+          <span> Hexadecimal </span><br/>
+
+          <h3> Deseja criptografar? </h3>
+          <%= radio_button_tag(:base_encrypt, "Sim") %>
+          <span> Sim </span><br/>
+          <%= radio_button_tag(:base_encrypt, "Não") %>
+          <span> Não </span><br/>
+
+          <p><%= submit_tag("Converter") %></p>
+        
+        <% end %>
+    </th>
+    <th class="colum-style">
+      <span>Texto convertido: </span>
+      <%= text_area_tag(:output, @result , :readonly => true, size: "60x5") %>
+      <span>Texto Criptografado: </span>
+      <%= text_area_tag(:output, @result , :readonly => true, size: "60x5") %>
+    </th>
+  </tr>
+  <th colspan="2" align="left">
+    <%= form_tag do %>
+      <span>Texto criptografado? Descriptografie! </span>
+       <%= text_field_tag 'decrypt', '', size: 60 %>
+       <%= submit_tag("Decrypt") %>
+       <span>Texto Original: </span>
+       <%= text_field_tag 'decrypt', '', size: 16, maxlength: 16, :readonly => true %>
+      
+    <% end -%>
+    <p>
+  </th>
+</table>
