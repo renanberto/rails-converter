@@ -44,11 +44,11 @@ class FaculController < ApplicationController
     bintodec_array.each do |char|
       char = char.to_i
       if char == 1 || char == 0
-      result = 2 * i
-      i = char.to_i + result
-    else
-      return "ERROR"
-    end
+        result = 2 * i
+        i = char.to_i + result
+      else
+        return "ERROR"
+      end
     end
     result
   end
@@ -65,28 +65,28 @@ class FaculController < ApplicationController
     total
   end
 
-    def hex_to_decimal(text)
+  def hex_to_decimal(text)
     hextodec_array = text.split ''
     per = hextodec_array.count
     total = 0
     hextodec_array.each do |char|
       case char
-        when "A"
-          char = 10
-        when "B"
-          char = 11
-        when "C"
-          char = 12
-        when "D"
-          char = 13
-        when "E"
-          char = 14
-        when "F"
-          char = 15
-        end
-        if char == ("G".."Z").to_a
-          return "ERROR"
-        end
+      when "A"
+        char = 10
+      when "B"
+        char = 11
+      when "C"
+        char = 12
+      when "D"
+        char = 13
+      when "E"
+        char = 14
+      when "F"
+        char = 15
+      end
+      if char == ("G".."Z").to_a
+        return "ERROR"
+      end
       per = per - 1
       calc2 = char.to_i * 16 ** per
       total = total + calc2
@@ -106,7 +106,7 @@ class FaculController < ApplicationController
 
   def to_binary(text)
     bin_array = text.split ''
-    binary = bin_array.map do |binary|
+    bin_array.map do |binary|
       revert = []
       binary = binary.ord
       (1..8).each do
@@ -115,13 +115,12 @@ class FaculController < ApplicationController
         revert << rest
       end
       revert.reverse << ' '
-    end
-    binary.join
+    end.join
   end
 
   def to_octal(text)
     octal_array = text.split ''
-    octal = octal_array.map do |octal|
+    octal_array.map do |octal|
       revert = []
       octal = octal.ord
       (1..3).each do
@@ -130,13 +129,12 @@ class FaculController < ApplicationController
         revert << rest
       end
       revert.reverse << ' '
-    end
-    octal.join
+    end.join
   end
 
   def to_hex(text)
     hex_array = text.split ''
-    hex = hex_array.map do |hex|
+    hex_array.map do |hex|
       revert = []
       hex = hex.ord
       (1..2).each do
@@ -144,25 +142,24 @@ class FaculController < ApplicationController
         hex = hex / 16
 
         if rest == 10
-           revert << "A"
-         elsif rest == 11
-           revert << "B"
-         elsif rest == 12
-           revert << "C"
-         elsif rest == 13
-           revert << "D"
-         elsif rest == 14
-           revert << "E"
-         elsif rest == 15
-           revert << "F"
-         else
-           revert << rest
+          revert << "A"
+        elsif rest == 11
+          revert << "B"
+        elsif rest == 12
+          revert << "C"
+        elsif rest == 13
+          revert << "D"
+        elsif rest == 14
+          revert << "E"
+        elsif rest == 15
+          revert << "F"
+        else
+          revert << rest
         end
 
       end
       revert.reverse << ' '
-    end
-    hex.join
+    end.join
   end
 
 end
