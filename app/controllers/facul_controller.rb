@@ -23,7 +23,7 @@ class FaculController < ApplicationController
     elsif params[:base_view] == "Octal"
       @result = to_octal(word)
     elsif params[:base_view] == "Hexadecimal"
-      @result = to_hex(word)     
+      @result = to_hex(word)
     end
 
     if params[:base_encrypt] == "Sim"
@@ -126,7 +126,7 @@ class FaculController < ApplicationController
       octal = octal.ord
       (1..3).each do
         rest = octal % 8
-        octal = octal / 8  
+        octal = octal / 8
         revert << rest
       end
       revert.reverse << ' '
