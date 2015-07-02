@@ -15,14 +15,14 @@ class Converter
 
   def convert
     case target
-    when HEXADECIMAL
-      result = to_hex(text)
     when BINARY
       result = to_binary(text)
     when DECIMAL
-      result = to_decimal(text)
+      result = to_decimal(result)
     when OCTAL
       result = to_octal(text)
+    when HEXADECIMAL
+      result = to_hex(text)
     else
       result = text
     end
